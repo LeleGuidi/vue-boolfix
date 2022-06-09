@@ -1,7 +1,8 @@
 <template>
     <main class="main">
         <div class="main_container">
-            <FilmCard class="main_class" v-for="(media, index) in DataShared.mediaFiltered" :key="index" :media="DataShared.mediaFiltered[index]"/>
+            <FilmCard class="main_film" v-for="(media, index) in DataShared.filmFiltered" :key="index" :media="DataShared.filmFiltered[index]"/>
+            <SerieCard class="main_serie" v-for="(media, index) in DataShared.serieFiltered" :key="index" :media="DataShared.serieFiltered[index]"/>
         </div>
     </main>
 </template>
@@ -9,10 +10,13 @@
 <script>
 import DataShared from '../../share/DataShares'
 import FilmCard from '../commons/FilmCard.vue'
+import SerieCard from '../commons/SerieCard.vue'
+
 
 export default {
     components: { 
-        FilmCard 
+        FilmCard,
+        SerieCard
     },
     name: 'BaseMain',
     data() {
@@ -29,7 +33,6 @@ export default {
     
     &_container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         max-width: 1200px;
         margin: auto;
@@ -37,7 +40,7 @@ export default {
         flex-wrap: wrap;
     }
 
-    &_card {
+    &_film, &_serie {
         width: calc(100% / 3 - 1rem);
     }
 

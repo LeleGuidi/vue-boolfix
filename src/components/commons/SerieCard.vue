@@ -1,8 +1,8 @@
 <template>
     <div class="card">
         <ul>
-            <li>{{media.title}}</li>
-            <li>{{media.original_title}}</li>
+            <li>{{media.name}}</li>
+            <li>{{media.original_name}}</li>
             <li>
                 {{media.original_language}}
             </li>

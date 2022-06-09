@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
 export default Vue.observable({
-    mediaFiltered: [],
+    filmFiltered: [],
+    serieFiltered: [],
 })
