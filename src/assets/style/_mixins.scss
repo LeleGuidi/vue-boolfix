@@ -9,12 +9,12 @@
 
 @mixin sectionStyle {
     display: flex;
-    align-items: start;
+    align-items: stretch;
     max-width: 1200px;
     margin: auto;
     gap: 1rem;
     flex-wrap: wrap;
-    padding: 4rem;
+    padding: 6rem 4rem;
 }
 
 @mixin cardStyle {
@@ -22,7 +22,7 @@
     background-color: black;
     font-size: 0;
     border: .125rem solid #8c8c8c;
-    // height: 34.7494rem;
+    position: relative;
 }
 
 @mixin searchBarDetails {
@@ -31,4 +31,13 @@
     border: 0;
     font-weight: bold;
     color: white;
+}
+
+@mixin cardDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
 }

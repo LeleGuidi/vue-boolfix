@@ -27,6 +27,11 @@ export default {
     align-items: center;
     padding: .625rem 1.25rem;
     background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 
     h1 {
         color: #cf0000;

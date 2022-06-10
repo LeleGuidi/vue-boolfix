@@ -25,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 .main {
     background-color: #434343;
-    min-height: calc(100vh - 3.5938rem);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
