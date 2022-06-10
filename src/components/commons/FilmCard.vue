@@ -4,7 +4,7 @@
             <li>{{media.title}}</li>
             <li>{{media.original_title}}</li>
             <li>
-                {{media.original_language}}
+                <span :class="'flag-icon flag-icon-'+media.original_language"></span>
             </li>
             <li>{{media.vote_average}}</li>
         </ul>
