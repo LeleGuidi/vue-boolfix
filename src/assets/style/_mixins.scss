@@ -1,0 +1,23 @@
+@mixin listStyle {
+    display: flex;
+    list-style: none;
+    padding: 2rem;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+@mixin sectionStyle {
+    display: flex;
+    align-items: start;
+    max-width: 1200px;
+    margin: auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 4rem;
+}
+
+@mixin cardStyle {
+    width: calc(100% / 3 - 1rem);
+    flex-grow: 0;
+    flex-shrink: 0;
+}
