@@ -1,68 +1,73 @@
 <template>
-    <div class="card">
-        <ul class="card_list">
-            <li><span>Titolo: </span>{{media.title}}</li>
-            <li><span>Titolo originale: </span>{{media.original_title}}</li>
-            <li>
-                <span>Lingua originale: </span>
-                <country-flag class="flag_country" :country='flagCountry()' size='small'/>
-            </li>
-            <li><span>Media voti: </span>{{media.vote_average}}</li>
-            <li><span>Trama: </span>{{media.overview}}</li>
-        </ul>
+    <div @mouseover="over = true" @mouseleave="over = false" class="card">
+        <img v-show="(over == false && media.poster_path != null)" :src="'https://image.tmdb.org/t/p/w342'+media.poster_path" :alt="media.original_name">
+        <div v-if="(over == true || media.poster_path == null)" class="card_details">
+            <ul class="card_list">
+                <li><span>Titolo: </span>{{media.title}}</li>
+                <li><span>Titolo originale: </span>{{media.original_title}}</li>
+                <li>
+                    <span>Lingua originale: </span>
+                    <country-flag class="flag_country" :country='flagIcon' size='small'/>
+                </li>
+                <li><i v-for="index in 5" :key="index" :class="'fa-solid fa-star ' + (((index+1) <= starsVote) ? 'star_yellow' : 'star_grey')"></i></li>
+                <li><span>Trama: </span>{{media.overview}}</li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
-import CountryFlag from 'vue-country-flag'
+import CountryFlag from 'vue-country-flag';
+import FunctionShares from '../../share/FunctionShares';
+
 export default {
     name: 'MediaCard',
-    data(){
+    data() {
         return{
-            countryFlag: '',
+            over: false,
+            index: 1
         }
     },
     components: {
-        CountryFlag
+        CountryFlag,
     },
     props: {
         media: Object,
     },
-    methods: {
-        flagCountry() {
-            if(this.media.original_language == 'en') {
-                this.countryFlag = 'gb-eng'
-            } else if (this.media.original_language == 'da'){
-                this.countryFlag = 'gb'
-            } else if (this.media.original_language == 'ja'){
-                this.countryFlag = 'jpn'
-            } else if (this.media.original_language == 'ko'){
-                this.countryFlag = 'kp'
-            } else if (this.media.original_language == 'el'){
-                this.countryFlag = 'sv'
-            } else if (this.media.original_language == 'hi'){
-                this.countryFlag = 'ht'
-            } else {
-                this.countryFlag = this.media.original_language
-            }
-            return this.countryFlag
+    computed: {
+        flagIcon() {
+            return FunctionShares.flagCountry(this.media.original_language);
+        },
+
+        starsVote() {
+            return FunctionShares.starCounter(this.media.vote_average)
         }
-    }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/style/_mixins.scss';
 .card {
-    background-color: lightblue;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
     span {
         font-weight: bold;
+        color: white
     }
     &_list {
         @include listStyle;
     }
     .flag_country {
         vertical-align: bottom;
+    }
+    .star_yellow {
+        color: yellow;
+    }
+    .star_grey {
+        color: grey;
     }
     
 }

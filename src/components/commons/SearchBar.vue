@@ -2,7 +2,7 @@
     <div class="searchbar">
         <form @submit.prevent="searchFunction()">
             <input type="text" placeholder="Cosa vuoi vedere?" v-model="search">
-            <button>Cerca</button>
+            <button type="submit">Cerca</button>
         </form>
     </div>
 </template>
@@ -62,5 +62,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/_mixins.scss';
+.searchbar {
+    form {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
 
+        button {
+            @include searchBarDetails
+
+        }
+        input {
+            @include searchBarDetails
+        }
+        input::placeholder {
+            color: white;
+        }
+    }
+}
 </style>

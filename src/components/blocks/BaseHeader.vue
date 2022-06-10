@@ -26,5 +26,11 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: .625rem 1.25rem;
+    background-color: black;
+
+    h1 {
+        color: #cf0000;
+        text-transform: uppercase;
+    }
 }
 </style>

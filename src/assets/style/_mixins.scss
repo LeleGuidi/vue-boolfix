@@ -4,6 +4,7 @@
     padding: 2rem;
     flex-direction: column;
     font-size: 0.9rem;
+    color: white;
 }
 
 @mixin sectionStyle {
@@ -17,7 +18,17 @@
 }
 
 @mixin cardStyle {
-    width: calc(100% / 3 - 1rem);
-    flex-grow: 0;
-    flex-shrink: 0;
+    width: calc(100% / 3 - 0.67rem);
+    background-color: black;
+    font-size: 0;
+    border: .125rem solid #8c8c8c;
+    // height: 34.7494rem;
+}
+
+@mixin searchBarDetails {
+    padding: 0.3rem 0.8rem;
+    background-color: #cf0000;
+    border: 0;
+    font-weight: bold;
+    color: white;
 }

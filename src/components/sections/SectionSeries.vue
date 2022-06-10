@@ -1,6 +1,6 @@
 <template>
     <section class="section_serie">
-        <SerieCard class="serie_card" v-for="(media, index) in DataShared.filmFiltered" :key="index" :media="DataShared.filmFiltered[index]"/>
+        <SerieCard class="serie_card" v-for="(media, index) in DataShared.serieFiltered" :key="index" :media="DataShared.serieFiltered[index]"/>
     </section>
 </template>
 
@@ -28,6 +28,6 @@ export default{
     }
 
     .serie_card {
-        @include sectionStyle
+        @include cardStyle
     }
 </style>
