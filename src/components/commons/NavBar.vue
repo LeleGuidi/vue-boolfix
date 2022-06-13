@@ -1,16 +1,27 @@
 <template>
   <div class="navbar">
     <ul>
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/">Film</a> </li>
-        <li><a href="#/">SerieTV</a></li>
+        <li><a href="#/" @click="(DataShares.showSection = 'home')" :class="(isActive == 'home') ? 'active' : ''">Home</a></li>
+        <li><a href="#/" @click="(DataShares.showSection = 'film')" :class="(isActive == 'film') ? 'active' : ''">Film</a> </li>
+        <li><a href="#/" @click="(DataShares.showSection = 'serie')" :class="(isActive == 'serie') ? 'active' : ''">Serie TV</a></li>
     </ul>
   </div>
 </template>
 
 <script>
+import DataShares from '../../share/DataShares'
 export default {
-
+    name: 'NavBar',
+    data() {
+        return {
+            DataShares,
+        }
+    },
+    computed: {
+        isActive() {
+            return this.DataShares.showSection
+        }
+    }
 }
 </script>
 

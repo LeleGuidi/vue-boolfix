@@ -1,9 +1,9 @@
 <template>
     <main class="main">
         <div class="main_container">
-        <SectionHome/>
-        <SectionFilms v-show="(DataShares.showSerie == false)"/>
-        <SectionSeries v-show="(DataShares.showFilms == false)"/>
+        <SectionHome v-show="(DataShares.showSection == 'home')"/>
+        <SectionFilms v-show="(DataShares.showSection == 'film')"/>
+        <SectionSeries v-show="(DataShares.showSection == 'serie')"/>
         </div>
     </main>
 </template>
