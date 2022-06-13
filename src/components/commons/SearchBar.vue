@@ -1,6 +1,6 @@
 <template>
     <div class="searchbar">
-        <form @submit.prevent="searchFunction()">
+        <form @submit.prevent="searchFunction(); (DataShared.showSearch = true)">
             <input type="text" placeholder="Cosa vuoi vedere?" v-model="search">
             <button type="submit">Cerca</button>
         </form>

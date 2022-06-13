@@ -16,11 +16,11 @@
 }
 @mixin sectionStyle {
     display: flex;
-    max-width: 1400px;
+    width: 100%;
     margin: auto;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding: 3rem 0;
+    padding: 6rem 1rem;
 }
 @mixin cardStyle {
     width: calc(100% / 6 - 0.42rem);

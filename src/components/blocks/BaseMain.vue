@@ -1,9 +1,9 @@
 <template>
     <main class="main">
         <div class="main_container">
-        <SectionHome v-show="(DataShares.showSection == 'home')"/>
-        <SectionFilms v-show="(DataShares.showSection == 'film')"/>
-        <SectionSeries v-show="(DataShares.showSection == 'serie')"/>
+        <SectionHome v-show="(showSect == 'home')"/>
+        <SectionFilms v-show="(showSect == 'film')"/>
+        <SectionSeries v-show="(showSect == 'serie')"/>
         </div>
     </main>
 </template>
@@ -26,6 +26,11 @@ export default {
         return {
             DataShares
         }
+    },
+    computed: {
+        showSect() {
+            return this.DataShares.showSection
+        }
     }
 
 }
@@ -33,15 +38,14 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-    // background-color: rgb(20, 20, 20);
-    background-color: white;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &_container {
         width: 100%;
+        min-height: 100vh;
+        background-color: rgb(20, 20, 20);
     }
 
     h2 {

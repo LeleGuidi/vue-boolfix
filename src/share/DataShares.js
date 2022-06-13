@@ -5,5 +5,6 @@ export default Vue.observable({
     serieFiltered: [],
     showSection: 'home',
     popularFilms: [],
-    popularSeries: []
+    popularSeries: [],
+    showSearch: false,
 });

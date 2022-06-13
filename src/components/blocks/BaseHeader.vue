@@ -55,7 +55,6 @@ export default {
     right: 0;
     z-index: 10;
     &.onScroll {
-      box-shadow: 0 0 10px #aaa;
       background-color: rgb(20, 20, 20);
     }
     &_left {
