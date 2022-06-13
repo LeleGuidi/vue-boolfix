@@ -1,16 +1,16 @@
 <template>
     <section class="section_serie">
-        <SerieCard class="serie_card" v-for="(media, index) in DataShared.serieFiltered" :key="index" :media="DataShared.serieFiltered[index]"/>
+        <BaseCard class="serie_card" v-for="(media, index) in DataShared.serieFiltered" :key="index" :media="DataShared.serieFiltered[index]"/>
     </section>
 </template>
 
 <script>
-import SerieCard from '../commons/SerieCard.vue'
+import BaseCard from '../commons/BaseCard.vue'
 import DataShared from '../../share/DataShares'
 export default{
     name: 'SectionFilms',
     components: { 
-        SerieCard,
+        BaseCard,
     },
     data() {
         return {

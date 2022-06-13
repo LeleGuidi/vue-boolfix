@@ -1,7 +1,7 @@
 <template>
     <main class="main">
         <div class="main_container">
-                    <!-- <h2>cosa vuoi vedere?</h2> -->
+        <SectionHome/>
         <SectionFilms v-show="(DataShares.showSerie == false)"/>
         <SectionSeries v-show="(DataShares.showFilms == false)"/>
         </div>
@@ -12,13 +12,15 @@
 import SectionFilms from '../sections/SectionFilms.vue'
 import SectionSeries from '../sections/SectionSeries.vue'
 import DataShares from '../../share/DataShares'
+import SectionHome from '../sections/SectionHome.vue'
 
 
 export default {
     name: 'BaseMain',
     components: { 
         SectionFilms,
-        SectionSeries
+        SectionSeries,
+        SectionHome
     },
     data() {
         return {
@@ -36,7 +38,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6rem 0;
+    padding: 3rem 0;
 
     &_container {
         width: 100%;
