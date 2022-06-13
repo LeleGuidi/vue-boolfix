@@ -14,9 +14,12 @@ export default{
     },
     data() {
         return {
-            DataShared
+            DataShared,
+            view: {
+                topOfPage: true
+            }
         }
-    }
+    },
 }
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header" :class="{ 'onScroll': !view.topOfPage}">
         <div class="header_left">
             <h1>boolfix</h1>
             <NavBar class="navbar"/>
@@ -19,7 +19,26 @@ export default {
     components: {
         SearchBar,
         NavBar
-    }
+    },
+    data () {
+        return {
+            view: {
+                topOfPage: true
+            }
+        }
+    },
+    beforeMount() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+        handleScroll(){
+            if(window.pageYOffset>0){
+                if(this.view.topOfPage) this.view.topOfPage = false
+            } else {
+                if(!this.view.topOfPage) this.view.topOfPage = true
+            }
+        }
+    },
 }
 </script>
 
@@ -29,13 +48,16 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: .625rem 1.25rem;
-    background-color: rgb(20, 20, 20);
+    background-color: rgba(20, 20, 20, 0.3);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
-
+    &.onScroll {
+      box-shadow: 0 0 10px #aaa;
+      background-color: rgb(20, 20, 20);
+    }
     &_left {
         display: flex;
         align-items: center;

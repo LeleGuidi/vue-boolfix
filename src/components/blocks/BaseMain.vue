@@ -33,12 +33,12 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-    background-color: rgb(20, 20, 20);
+    // background-color: rgb(20, 20, 20);
+    background-color: white;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 0;
 
     &_container {
         width: 100%;
