@@ -6,33 +6,31 @@
     font-size: 0.9rem;
     color: white;
 }
-
 @mixin sectionStyle {
     display: flex;
-    align-items: stretch;
     max-width: 1200px;
     margin: auto;
-    gap: 1rem;
     flex-wrap: wrap;
-    padding: 6rem 4rem;
+    padding: 6rem;
+    gap: 1rem;
 }
-
 @mixin cardStyle {
-    width: calc(100% / 3 - 0.67rem);
+    width: calc(100% / 5 - 0.8rem);
     background-color: black;
     font-size: 0;
     border: .125rem solid #8c8c8c;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
-
 @mixin searchBarDetails {
     padding: 0.3rem 0.8rem;
     background-color: #cf0000;
     border: 0;
     font-weight: bold;
     color: white;
+    border-radius: .625rem;
 }
-
 @mixin cardDetails {
     position: absolute;
     top: 0;
@@ -40,4 +38,10 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+}
+@mixin cardImage {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 }

@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-    background-color: #434343;
+    background-color: rgb(20, 20, 20);
     min-height: 100vh;
     display: flex;
     justify-content: center;

@@ -1,6 +1,7 @@
 <template>
     <div @mouseover="over = true" @mouseleave="over = false" class="card">
-        <img v-show="(media.poster_path != null)" :src="'https://image.tmdb.org/t/p/w342'+media.poster_path" :alt="media.original_name">
+        <!-- <div v-show="(media.poster_path != null)" class="card_image" :style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w342' + media.poster_path + ')'}"></div> -->
+        <img class="card_image" v-show="(media.poster_path != null)" :src="'https://image.tmdb.org/t/p/w185'+media.poster_path" :alt="media.original_name">
         <div v-show="(over == true || media.poster_path == null)" class="card_details">
             <ul class="card_list">
                 <li><span>Titolo: </span>{{media.title}}</li>
@@ -9,7 +10,7 @@
                     <span>Lingua originale: </span>
                     <country-flag class="flag_country" :country='flagIcon' size='small'/>
                 </li>
-                <li><i v-for="index in 5" :key="index" :class="'fa-solid fa-star ' + (((index+1) <= starsVote) ? 'star_yellow' : 'star_grey')"></i></li>
+                <li><i v-for="index in 5" :key="index" :class="'fa-solid fa-star ' + ((index <= starsVote) ? 'star_yellow' : 'star_grey')"></i></li>
                 <li><span v-show="(media.overview != '')">Trama: </span>{{media.overview}}</li>
             </ul>
         </div>
@@ -25,7 +26,6 @@ export default {
     data() {
         return{
             over: false,
-            index: 1
         }
     },
     components: {
@@ -41,7 +41,8 @@ export default {
 
         starsVote() {
             return FunctionShares.starCounter(this.media.vote_average)
-        }
+        },
+
     },
 }
 </script>
@@ -49,8 +50,8 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/style/_mixins.scss';
 .card {
-    img {
-        object-fit: cover;
+    &_image {
+        @include cardImage
     }
     &_details {
         @include cardDetails

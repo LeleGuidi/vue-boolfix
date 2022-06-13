@@ -1,5 +1,3 @@
-
-
 export default {
     flagCountry(language) {
         if(language == 'en') {
@@ -14,7 +12,9 @@ export default {
             return 'sv'
         } else if (language == 'hi'){
             return 'ht'
-        } else {
+        } else if (language == 'kk'){
+            return 'kz'
+        }else {
             return language
         }
         
