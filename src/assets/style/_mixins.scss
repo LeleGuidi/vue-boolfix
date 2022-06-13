@@ -6,23 +6,6 @@
     font-size: 0.9rem;
     color: white;
 }
-@mixin sectionStyle {
-    display: flex;
-    max-width: 1200px;
-    margin: auto;
-    flex-wrap: wrap;
-    padding: 6rem;
-    gap: 1rem;
-}
-@mixin cardStyle {
-    width: calc(100% / 5 - 0.8rem);
-    background-color: black;
-    font-size: 0;
-    border: .125rem solid #8c8c8c;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-}
 @mixin searchBarDetails {
     padding: 0.3rem 0.8rem;
     background-color: #cf0000;
@@ -30,6 +13,21 @@
     font-weight: bold;
     color: white;
     border-radius: .625rem;
+}
+@mixin sectionStyle {
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+@mixin cardStyle {
+    width: calc(100% / 6 - 0.42rem);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    background-color: grey;
 }
 @mixin cardDetails {
     position: absolute;
@@ -41,7 +39,12 @@
     overflow: auto;
 }
 @mixin cardImage {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }

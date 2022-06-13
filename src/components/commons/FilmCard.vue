@@ -1,7 +1,6 @@
 <template>
     <div @mouseover="over = true" @mouseleave="over = false" class="card">
-        <!-- <div v-show="(media.poster_path != null)" class="card_image" :style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w342' + media.poster_path + ')'}"></div> -->
-        <img class="card_image" v-show="(media.poster_path != null)" :src="'https://image.tmdb.org/t/p/w185'+media.poster_path" :alt="media.original_name">
+        <img class="card_image" v-show="(media.poster_path != null)" :src="'https://image.tmdb.org/t/p/w342'+media.poster_path" :alt="media.original_name">
         <div v-show="(over == true || media.poster_path == null)" class="card_details">
             <ul class="card_list">
                 <li><span>Titolo: </span>{{media.title}}</li>
